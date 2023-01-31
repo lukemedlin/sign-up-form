@@ -1,3 +1,9 @@
+:root {
+    --main-text-color: #161616;
+    --white-text-color: #fff;
+    font-size: min(16px, 10px + .5vw);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,6 +11,9 @@
 
 main {
     height: 100vh;
+    display: flex;
+    color: var(--main-text-color);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .side-image-wrap {
@@ -12,18 +21,101 @@ main {
     height: 100%;
     width: 40%;
     font-size: 3rem;
-    color: #fff;
-    position: relative;
+    color: var(--white-text-color);
+    min-width: 100px;
 }
 
 .side-image-wrap > div {
-    position: absolute;
-    top: 20%;
-    width: 100%;
     display: flex;
+    flex-wrap: wrap;
+    margin-top: 20vh;
     justify-content: center;
 }
 
 .side-image-wrap > div > img {
     height: 6rem;
+}
+
+.form-wrap {
+    background-color: #f3f3f3;
+    height: 100%;
+    width: 60%;
+    padding-top: 12vh;
+}
+
+.form-header {
+    margin-bottom: 50px;
+    padding: 30px 40px;
+}
+
+.form-header > p {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-top: 20px;
+}
+
+.form-body {
+    background-color: #fff;
+    padding: 30px 40px;
+    box-shadow: rgba(149, 157, 165, 0.4) 0px 8px 15px;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10%;
+}
+
+.form-card {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    width: 250px;
+}
+
+.form-card > label {
+    font-size: .8rem;
+    font-weight: 600;
+    margin-bottom: 2px;
+    letter-spacing: 1px;
+}
+
+.form-card > input {
+    font-size: 1rem;
+    padding: 6px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    outline: none;
+}
+
+div > .form-card > input:focus {
+    box-shadow: 3px 3px 5px rgba(105, 105, 105, 0.395);
+    border: 1px solid #0800ff;
+   
+}
+
+input[type="password"]:valid {
+    border-color: green;
+}
+
+input[type="password"]:invalid {
+    border-color: red;
+}
+
+.form-footer {
+    padding: 30px 40px;
+}
+
+button {
+    padding: 15px 50px;
+    color: var(--white-text-color);
+    background-color: #1c1b23;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+a {
+    color: #1c1b23;
 }

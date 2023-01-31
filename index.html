@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,16 +8,87 @@
     <link rel="stylesheet" href="style.css">
     <title>Sign-Up Form</title>
 </head>
+
 <body>
     <main>
         <div class="side-image-wrap">
             <div>
-                <img src="odin-line.png" alt="Odin logo"><h1>Odin</h1>
+                <img src="odin-line.png" alt="Odin logo">
+                <h1>Odin</h1>
             </div>
         </div>
         <div class="form-wrap">
-
+            <div class="form-header">
+                <p>This is not a real online service! You know you need something like this in your life to help you
+                    realize your deepest dreams. <br>Sign up <em>now</em> to get started.</p>
+                <p>You <em>know</em> you want to.</p>
+            </div>
+            <div class="form-body">
+                <form id="create-account" action="/" method="post">
+                    <h2>Let's do this!</h2>
+                    <div class="form-row">
+                        <div class="form-card">
+                            <label for="first-name">FIRST NAME</label>
+                            <input id="first-name" name="first-name" type="text">
+                        </div>
+                        <div class="form-card">
+                            <label for="last-name">LAST NAME</label>
+                            <input id="last-name" name="last-name" type="text">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-card">
+                            <label for="email">EMAIL</label>
+                            <input type="email" name="email" id="email">
+                        </div>
+                        <div class="form-card">
+                            <label for="phone">PHONE NUMBER</label>
+                            <input type="tel" name="phone" id="phone">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-card">
+                            <label for="password">PASSWORD</label>
+                            <input type="password" name="password" id="password">
+                            <span id="passwordValid"></span>
+                        </div>
+                        <div class="form-card">
+                            <label for="confirm-password">CONFIRM PASSWORD</label>
+                            <input type="password" name="confirm-password" id="confirm-password">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="form-footer">
+                <button type="submit" form="create-account">Create Account</button>
+                <h3>Already have an account? <a>Log in</a></h2>
+            </div>
         </div>
     </main>
+
+<script>
+    function checkPassword(event) {
+        const password = document.querySelector("#password").value;
+        const confirmPassword = document.querySelector("#confirm-password").value;
+
+        if (password === confirmPassword) {
+            document.querySelector("#passwordValid").textContent = "Passwords match!";
+            document.querySelector("#password").setCustomValidity("");
+            document.querySelector("#confirm-password").setCustomValidity("");
+            
+        } else {
+            document.querySelector("#passwordValid").textContent = "Passwords DO NOT match!";
+            document.querySelector("#password").setCustomValidity("no-match");
+            document.querySelector("#confirm-password").setCustomValidity("no-match");
+        }
+    }
+
+    document.querySelector("#password").addEventListener("keyup",  checkPassword)
+    document.querySelector("#confirm-password").addEventListener("keyup",  checkPassword)
+
+
+</script>
+
 </body>
+
 </html>
