@@ -1,4 +1,4 @@
-#sign-up-form
+# sign-up-form
 
 This is a project for The Odin Project.
 
